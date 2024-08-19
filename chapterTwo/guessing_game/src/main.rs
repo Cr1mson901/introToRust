@@ -9,34 +9,39 @@ fn main(){
 
     println!("The secret number is {secret_number}");
 
-    println!("Please input your guess.");
+    loop {
 
-    let mut guess = String::new();
-    //let is used to declare variables
-    //mut makes the var mutable: Immutable by default
+        println!("Please input your guess.");
 
-    //similar to python but use . as attribute functions
-    io::stdin()
-        .read_line(&mut guess)//Changes the input into the users input. Needs to be mut
-        //& makes it a reference so you don't need to pull it into memory. References are immutable by default 
- 
-        //Returns string if error is returned from .expect
-        .expect("Failed to read line");
+        let mut guess = String::new();
+        //let is used to declare variables
+        //mut makes the var mutable: Immutable by default
 
-    //trim takes out white space, parse converts one type to another
-    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+        //similar to python but use . as attribute functions
+        io::stdin()
+            .read_line(&mut guess)//Changes the input into the users input. Needs to be mut
+            //& makes it a reference so you don't need to pull it into memory. References are immutable by default 
+    
+            //Returns string if error is returned from .expect
+            .expect("Failed to read line");
 
-    //can be rewritten as
-    //io::stdin().read_line(&mut guess).expect("Failed to read line")
+        //trim takes out white space, parse converts one type to another
+        let guess: u32 = guess.trim().parse().expect("Please type a number!");
 
-    println!("You guessed: {}", guess);
+        //can be rewritten as
+        //io::stdin().read_line(&mut guess).expect("Failed to read line")
 
-    //match does the function that matches what is returned
-    match guess.cmp(&secret_number){
-        //3 outcomes when comparing
-        Ordering::Less => println!("Too Small!"),
-        Ordering::Greater => println!("Too BIG!"),
-        Ordering::Equal => println!("YOU WIN!"),
+        println!("You guessed: {}", guess);
+
+        //match does the function that matches what is returned
+        match guess.cmp(&secret_number){
+            //3 outcomes when comparing
+            Ordering::Less => println!("Too Small!"),
+            Ordering::Greater => println!("Too BIG!"),
+            Ordering::Equal => {
+                println!("YOU WIN!");
+                break;
+            }
+        }
     }
-
 }

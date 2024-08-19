@@ -1,0 +1,10 @@
+cargo new to create this project
+cargo build to compile this project
+cargo run to compile and run in one step
+cargo check is to check if your code can compile
+cargo build --release for when the project is ready for release
+
+If i want to work on a git project
+$ git clone example.org/someproject
+$ cd someproject
+$ cargo build

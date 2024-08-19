@@ -1,0 +1,10 @@
+Rustup - a command line tool for managing Rust versions and associated tools.
+linker -  a program that Rust uses to join its compiled outputs into one file
+Installation
+    Mac
+        $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+    linker install if linker error
+        $ xcode-select --install
+
+    Windows
+        https://www.rust-lang.org/tools/install

@@ -23,6 +23,9 @@ fn main(){
         //Returns string if error is returned from .expect
         .expect("Failed to read line");
 
+    //trim takes out white space, parse converts one type to another
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+
     //can be rewritten as
     //io::stdin().read_line(&mut guess).expect("Failed to read line")
 
@@ -31,9 +34,9 @@ fn main(){
     //match does the function that matches what is returned
     match guess.cmp(&secret_number){
         //3 outcomes when comparing
-        Ordering::Less => println!("Too Small!");
-        Ordering::Greater => println!("Too BIG!");
-        Ordering::Equal => println!("YOU WIN!");
+        Ordering::Less => println!("Too Small!"),
+        Ordering::Greater => println!("Too BIG!"),
+        Ordering::Equal => println!("YOU WIN!"),
     }
 
 }

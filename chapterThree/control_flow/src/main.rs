@@ -70,7 +70,7 @@ fn main() {
 
     while index < 5 {
         println!("the value is {}", a[index]);
-        index += 1
+        index += 1;
     }
 
     //Looping through with for
@@ -80,6 +80,6 @@ fn main() {
 
     //Countdown using for
     for number in (1..4).rev() { //rev is to reverse the order
-        println!("{number}")
+        println!("{number}");
     }
 }
